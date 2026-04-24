@@ -1,0 +1,62 @@
+<section class="qh" id="ave">
+  <div class="wrap">
+    <div class="qh__head">
+      <div class="kicker">Guía de actuación</div>
+      <div class="qh__subtitle">
+        
+        <h2 class="qh__title">¿Qué hago si<br/><em>encuentro un ave?</em></h2>
+        <p class="qh__lede">
+          Cada minuto cuenta. Sigue estos pasos y aumentarás mucho
+          las posibilidades de que el ave sobreviva.
+        </p>
+      </div>
+      
+    </div>
+
+    <div class="qh__grid">
+      @for (step of steps; track step.title) {
+        <div class="qh-card" [class]="'qh-card ' + step.cls">
+          <div class="qh-card__icon"><lucide-icon [img]="step.icon" [size]="32" [strokeWidth]="1.5"></lucide-icon></div>
+          <h3 class="qh-card__title">{{ step.title }}</h3>
+          <p class="qh-card__desc">{{ step.desc }}</p>
+        </div>
+      }
+    </div>
+    <div class="qh__pdf-info">
+      <div class="qh__pdf-info-text">
+        <div class="qh__pdf-info-title">¿Es un ave común?</div>
+        <p class="qh__pdf-info-desc">Wildcares SP se especializa en aves protegidas. Si has encontrado un ave común, consulta nuestras fichas de actuación por especie.</p>
+      </div>
+      <div class="qh__categories">
+        @for (cat of categories; track cat.title) {
+          <a href="/que-hacer" class="qh__cat">
+            <img [src]="cat.img" [alt]="cat.title" class="qh__cat-img"/>
+            <div class="qh__cat-title">{{ cat.title }}</div>
+          </a>
+        }
+      </div>
+      <a href="/que-hacer" class="qh__more-link">
+        Ver todas las fichas de actuación
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+    <div class="qh__contact-info">
+      <p>¿El ave que has encontrado es una especie protegida o está gravemente herida? Contacta con nosotros directamente.</p>
+    </div>
+    <div class="qh__ctas">
+      <a href="tel:+34681058499" class="btn btn-accent">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.62 3.38 2 2 0 0 1 3.6 1.21h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.86a16 16 0 0 0 6 6l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.73 16.92z"/>
+        </svg>
+        Llamar ahora
+      </a>
+      <a href="https://wa.me/34681058499" class="btn btn-whatsapp">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+        </svg>
+        WhatsApp
+      </a>
+    </div>
+    
+  </div>
+</section>

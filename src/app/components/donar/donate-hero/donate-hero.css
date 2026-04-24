@@ -1,0 +1,71 @@
+.donate-hero {
+  background: var(--green-900, #1a3a1a);
+  color: var(--cream-50, #fafaf7);
+  padding: 140px 24px 80px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.donate-hero__inner {
+  max-width: 700px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.donate-hero__kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  font-family: monospace;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--green-300, #7ab87a);
+  margin-bottom: 24px;
+}
+
+.donate-hero__title {
+  font-size: clamp(44px, 6vw, 72px);
+  font-weight: 300;
+  letter-spacing: -0.03em;
+  line-height: 1.05;
+  margin-bottom: 24px;
+}
+
+.donate-hero__title em {
+  font-style: italic;
+  color: var(--clay-400, #e8820c);
+}
+
+.donate-hero__lede {
+  font-size: 17px;
+  line-height: 1.6;
+  color: oklch(0.85 0.05 145);
+  max-width: 520px;
+  margin: 0 auto;
+}
+
+.donate-hero__nav {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.donate-hero__pill {
+  padding: 10px 20px;
+  border-radius: 999px;
+  border: 1px solid oklch(1 0 0 / 0.2);
+  color: var(--cream-50);
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.15s;
+  text-decoration: none;
+}
+
+.donate-hero__pill:hover {
+  background: oklch(1 0 0 / 0.1);
+  border-color: oklch(1 0 0 / 0.35);
+}

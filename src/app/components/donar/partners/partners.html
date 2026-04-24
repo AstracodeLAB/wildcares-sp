@@ -1,0 +1,22 @@
+<section class="partners" id="partners">
+  <div class="wrap">
+    <div class="partners__head">
+      <div class="kicker">Colaboradores</div>
+      <h2 class="partners__title">Partners</h2>
+    </div>
+  </div>
+  <div class="partners__track-wrap">
+    <div class="partners__track">
+      @for (p of partners; track p.name) {
+        <div class="partners__item">
+          <img [src]="p.logo" [alt]="p.name" class="partners__logo"/>
+        </div>
+      }
+      @for (p of partners; track p.name + '_dup') {
+        <div class="partners__item">
+          <img [src]="p.logo" [alt]="p.name" class="partners__logo"/>
+        </div>
+      }
+    </div>
+  </div>
+</section>

@@ -1,0 +1,21 @@
+<div class="success">
+  <div class="success__check">
+    <svg width="42" height="42" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M20 6L9 17l-5-5"/>
+    </svg>
+  </div>
+  <h1 class="success__title"><em>Gracias.</em><br/>De verdad.</h1>
+  <p class="success__msg">
+    Tu donación de <strong>{{ amount }}€{{ freq === 'month' ? '/mes' : '' }}</strong> ha sido confirmada.
+    En breve recibirás un email con el resumen y el certificado fiscal.
+  </p>
+  <div class="success__actions">
+    <a href="/" class="btn btn-primary">
+      Volver al inicio
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M5 12h14M13 5l7 7-7 7"/>
+      </svg>
+    </a>
+    <button class="btn btn-ghost" (click)="reset.emit()">Hacer otra donación</button>
+  </div>
+</div>

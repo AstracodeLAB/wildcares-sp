@@ -1,0 +1,57 @@
+<footer class="footer">
+  <div class="footer__inner">
+    <div class="footer__top">
+      <div class="footer__brand">
+        <div class="footer__brand-logo">
+          <img src="assets/logo-white.png" alt="Wildcares SP" width="44" height="44"/>
+          <span class="serif">Wildcares SP</span>
+        </div>
+        <p class="footer__lede">
+          Rescatamos aves, restauramos hábitats<br/>
+          y educamos para un futuro más verde.
+        </p>
+        <div class="footer__socials">
+          @for (s of socials; track s.id) {
+            <a [href]="s.href" class="footer__social" [attr.aria-label]="s.label">
+              <lucide-icon [img]="s.icon" [size]="16" [strokeWidth]="1.8"></lucide-icon>
+            </a>
+          }
+        </div>
+      </div>
+      <div class="footer__cols">
+        <div>
+          <div class="footer__col-title">Navegación</div>
+          <ul>
+            <li><a href="/">Inicio</a></li>
+            <li><a href="#ave">¿Encontré un ave?</a></li>
+            <li><a href="#proyectos">Proyectos</a></li>
+            <li><a href="#sobre">Sobre nosotros</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer__col-title">Colabora</div>
+          <ul>
+            <li><a routerLink="/donar">Donar</a></li>
+            <li><a href="#colabora">Voluntariado</a></li>
+            <li><a href="#colabora">Partners</a></li>
+            <li><a href="#colabora">Teaming</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer__col-title">Contacto</div>
+          <ul>
+            <li><a href="mailto:info@wildcares.org">info@wildcares.org</a></li>
+            <li><span>Málaga, España</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <div>© 2026 Wildcares SP · Todos los derechos reservados</div>
+      <div class="footer__legal">
+        <a href="#">Aviso legal</a>
+        <a href="#">Política de privacidad</a>
+      </div>
+    </div>
+  </div>
+</footer>

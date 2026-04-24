@@ -1,0 +1,33 @@
+<section class="colab" id="colabora">
+  <div class="wrap">
+    <div class="colab__head">
+      <div class="kicker">Hay muchas formas de sumarte</div>
+      <h2 class="colab__title">Colabora <em>con nosotros</em></h2>
+      <p class="colab__lede">Tu tiempo, tu voz o tu apoyo económico. Todo suma cuando se trata de devolverle el vuelo a quien lo perdió.</p>
+    </div>
+
+    <div class="colab__grid">
+      @for (opt of opts; track opt.title) {
+        <div class="colab-card" [class.colab-card--featured]="opt.featured" [class.colab-card--accent]="opt.accent">
+          <div class="colab-card__icon">
+            @if (opt.icon === 'heart') {
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            }
+            @if (opt.icon === 'users') {
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            }
+            @if (opt.icon === 'handshake') {
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M11 17l2 2 4-4M21 10l-7 7-3-3-4 4-4-4 7-7 3 3 8-8z"/></svg>
+            }
+          </div>
+          <h3 class="colab-card__title">{{ opt.title }}</h3>
+          <p class="colab-card__desc">{{ opt.desc }}</p>
+          <a [href]="opt.href" class="colab-card__cta">
+            {{ opt.cta }}
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M8 7h9v9"/></svg>
+          </a>
+        </div>
+      }
+    </div>
+  </div>
+</section>

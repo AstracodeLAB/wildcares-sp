@@ -1,0 +1,41 @@
+<header class="nav" [class.nav--scrolled]="scrolled" [class.nav--onDark]="onDark && !scrolled">
+  <div class="nav__inner">
+    <a href="/" class="nav__brand" aria-label="Wildcares SP">
+      <img
+        [src]="onDark && !scrolled ? '/assets/logo-white.png' : '/assets/logo-black.png'"
+        alt="Wildcares SP"
+        width="40"
+        height="40"
+      />
+      <span class="serif nav__brand-text">Wildcares<span class="nav__brand-sp">SP</span></span>
+    </a>
+
+    <nav class="nav__links">
+      @for (item of items; track item.id) {
+        <a [href]="item.href" class="nav__link" [class.is-active]="active === item.id">{{ item.label }}</a>
+      }
+    </nav>
+
+    <a href="/donar" class="btn btn-accent nav__cta">
+      Donar ahora
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M5 12h14M13 5l7 7-7 7"/>
+      </svg>
+    </a>
+
+    <button class="nav__hamburger" (click)="toggleMenu()" [class.is-open]="menuOpen">
+      @if (!menuOpen) {
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+      } @else {
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6L6 18M6 6l12 12"/></svg>
+      }
+    </button>
+  </div>
+
+  <div class="nav__mobile" [class.is-open]="menuOpen">
+    @for (item of items; track item.id) {
+      <a [href]="item.href" class="nav__mobile-link" [class.is-active]="active === item.id" (click)="closeMenu()">{{ item.label }}</a>
+    }
+    <a href="/donar" class="btn btn-accent nav__mobile-cta" (click)="closeMenu()">Hazte socio</a>
+  </div>
+</header>

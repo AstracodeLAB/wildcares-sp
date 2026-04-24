@@ -1,0 +1,88 @@
+<section class="donativos" id="donativos">
+  <div class="wrap">
+    <div class="donativos__head">
+      <div class="kicker">Aportación directa</div>
+      <h2 class="donativos__title">Donativos</h2>
+      <p class="donativos__desc">Elige el método que más te convenga. Cada euro va íntegro a nuestros proyectos de rescate y rehabilitación.</p>
+    </div>
+
+    <div class="donativos__grid">
+
+      <div class="donativo-card" [class.is-open]="activeMethod === 'transferencia'">
+        <button class="donativo-card__header" (click)="toggleMethod('transferencia')">
+          <div class="donativo-card__icon donativo-card__icon--green">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg>
+          </div>
+          <div>
+            <div class="donativo-card__title">Transferencia bancaria</div>
+            <div class="donativo-card__sub">Ingreso directo a nuestra cuenta</div>
+          </div>
+          <svg class="donativo-card__chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        @if (activeMethod === 'transferencia') {
+          <div class="donativo-card__body">
+            <div class="donativo-iban">
+              <div class="donativo-iban__label">IBAN</div>
+              <div class="donativo-iban__value">ES00 0000 0000 0000 0000 0000</div>
+            </div>
+            <div class="donativo-iban">
+              <div class="donativo-iban__label">Titular</div>
+              <div class="donativo-iban__value">Wildcares SP</div>
+            </div>
+            <div class="donativo-iban">
+              <div class="donativo-iban__label">Concepto</div>
+              <div class="donativo-iban__value">Donación Wildcares SP</div>
+            </div>
+            <p class="donativo-card__note">Recibirás un certificado de donación por email tras confirmar tu aportación a wildcares2&#64;gmail.com</p>
+          </div>
+        }
+      </div>
+
+      <div class="donativo-card" [class.is-open]="activeMethod === 'paypal'">
+        <button class="donativo-card__header" (click)="toggleMethod('paypal')">
+          <div class="donativo-card__icon donativo-card__icon--blue">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 11l3-8h6a4 4 0 0 1 3.8 5.2L18 13h-5l-1 5H8l1-5H6a2 2 0 0 1-2-2.5L5 9"/></svg>
+          </div>
+          <div>
+            <div class="donativo-card__title">PayPal</div>
+            <div class="donativo-card__sub">Pago rápido y seguro online</div>
+          </div>
+          <svg class="donativo-card__chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        @if (activeMethod === 'paypal') {
+          <div class="donativo-card__body">
+            <p class="donativo-card__note">Haz click en el botón para ir a nuestra página de PayPal y realizar tu donación de forma segura.</p>
+            <a href="https://www.paypal.com/donate" target="_blank" class="btn btn-accent donativo-card__btn">Donar con PayPal</a>
+          </div>
+        }
+      </div>
+
+      <div class="donativo-card" [class.is-open]="activeMethod === 'bizum'">
+        <button class="donativo-card__header" (click)="toggleMethod('bizum')">
+          <div class="donativo-card__icon donativo-card__icon--clay">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M12 18h.01"/></svg>
+          </div>
+          <div>
+            <div class="donativo-card__title">Bizum</div>
+            <div class="donativo-card__sub">Transferencia instantánea desde tu móvil</div>
+          </div>
+          <svg class="donativo-card__chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        @if (activeMethod === 'bizum') {
+          <div class="donativo-card__body">
+            <div class="donativo-iban">
+              <div class="donativo-iban__label">Número Bizum</div>
+              <div class="donativo-iban__value">+34 681 058 499</div>
+            </div>
+            <div class="donativo-iban">
+              <div class="donativo-iban__label">Concepto</div>
+              <div class="donativo-iban__value">Donación Wildcares SP</div>
+            </div>
+            <p class="donativo-card__note">Tras realizar el Bizum envíanos un email a wildcares2&#64;gmail.com con tu nombre para el certificado fiscal.</p>
+          </div>
+        }
+      </div>
+
+    </div>
+  </div>
+</section>

@@ -1,0 +1,163 @@
+<app-nav [active]="'actividades'" [onDark]="true"></app-nav>
+
+<section class="act-hero">
+  <div class="act-hero__inner">
+    <div class="kicker kicker--light">Áreas de actuación</div>
+    <h1 class="act-hero__title">Lo que <em>hacemos</em><br/>cada día.</h1>
+    <p class="act-hero__lede">Trabajamos para defender la biodiversidad del litoral malagueño y acercar la naturaleza a todas las personas.</p>
+  </div>
+</section>
+
+<nav class="act-nav">
+  <div class="wrap act-nav__inner">
+    @for (s of sections; track s.id) {
+      <button class="act-nav__btn" [class.is-active]="activeSection === s.id" (click)="activeSection = s.id">{{ s.label }}</button>
+    }
+  </div>
+</nav>
+
+@if (activeSection === 'educativas') {
+  <section class="act-section">
+    <div class="wrap">
+      <div class="act-section__head">
+        <div class="kicker">Educación ambiental</div>
+        <h2 class="act-section__title">Actividades <em>educativas</em></h2>
+        <p class="act-section__desc">Ornitología y conservación para todos los públicos — desde niños hasta profesionales.</p>
+      </div>
+
+      <div class="act-cards">
+        @for (act of educativas.actividades; track act.title) {
+          <div class="act-card">
+            <div class="act-card__img" [style.backgroundImage]="'url(' + act.img + ')'"></div>
+            <div class="act-card__body">
+              <h3 class="act-card__title">{{ act.title }}</h3>
+              <p class="act-card__desc">{{ act.desc }}</p>
+            </div>
+          </div>
+        }
+      </div>
+      <div class="act-section__ctatop">
+        <a href="assets/pdfs/Precio_actividades.pdf" download class="btn btn-primary">Descargar folleto completo</a>
+      </div>
+
+      <div class="act-cursos">
+        <div class="act-cursos__head">
+          <h3 class="act-cursos__title">Cursos y Charlas</h3>
+          <p class="act-cursos__desc">Formación especializada en fauna silvestre y conservación.</p>
+        </div>
+        <div class="act-cursos__list">
+          @for (curso of educativas.cursos; track curso.titulo) {
+            <div class="act-curso">
+              <span class="act-curso__badge" [class]="'act-curso__badge--' + getTipoBadgeColor(curso.tipo)">{{ curso.tipo }}</span>
+              <span class="act-curso__titulo">{{ curso.titulo }}</span>
+              @if (curso.pdf) {
+                <a href="assets/pdfs/Formacion_Cuerpos_de_Seguridad.pdf" download class="act-curso__pdf">PDF</a>
+              }
+            </div>
+          }
+        </div>
+      </div>
+
+      <div class="act-section__cta">
+        <a href="assets/pdfs/Charlas ESO y BAchiller 2023.pdf" download class="btn btn-primary">Descargar folleto completo</a>
+      </div>
+    </div>
+  </section>
+}
+
+@if (activeSection === 'diversidad') {
+  <section class="act-section">
+    <div class="wrap">
+      <div class="act-section__head">
+        <div class="kicker">Inclusión</div>
+        <h2 class="act-section__title">Diversidad <em>funcional</em></h2>
+        <p class="act-section__desc">Cursos y charlas adaptadas para personas con diversidad funcional, manteniendo la misma calidad y contenido que nuestras actividades estándar.</p>
+      </div>
+
+      <div class="act-cards">
+        @for (act of diversidad.actividades; track act.title) {
+          <div class="act-card">
+            <div class="act-card__img" [style.backgroundImage]="'url(' + act.img + ')'"></div>
+            <div class="act-card__body">
+              <h3 class="act-card__title">{{ act.title }}</h3>
+              <p class="act-card__desc">{{ act.desc }}</p>
+            </div>
+          </div>
+        }
+      </div>
+
+      <div class="act-cursos">
+        <div class="act-cursos__head">
+          <h3 class="act-cursos__title">Cursos Disponibles</h3>
+          <p class="act-cursos__desc">Adaptados a diferentes capacidades y necesidades.</p>
+        </div>
+        <div class="act-cursos__list">
+          @for (curso of diversidad.cursos; track curso.titulo) {
+            <div class="act-curso">
+              <span class="act-curso__badge" [class]="'act-curso__badge--' + getTipoBadgeColor(curso.tipo)">{{ curso.tipo }}</span>
+              <span class="act-curso__titulo">{{ curso.titulo }}</span>
+            </div>
+          }
+        </div>
+      </div>
+
+      <div class="act-section__cta">
+        <a href="assets/pdfs/Precio_WILDCARES_SP_diversidad_funcional.pdf" download class="btn btn-primary">Descargar folleto completo</a>
+      </div>
+    </div>
+  </section>
+}
+
+@if (activeSection === 'otras') {
+  <section class="act-section">
+    <div class="wrap">
+      <div class="act-section__head">
+        <div class="kicker">Más actividades</div>
+        <h2 class="act-section__title">Otras <em>actividades</em></h2>
+        <p class="act-section__desc">Team building, rutas y estudios científicos para empresas, grupos y aficionados.</p>
+      </div>
+
+      <div class="act-cards">
+        @for (act of otras; track act.title) {
+          <div class="act-card act-card--static" (click)="openLightbox(act.img, act.title)">
+            <div class="act-card__img" [style.backgroundImage]="'url(' + act.img + ')'">
+              <div class="act-card__zoom">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35M11 8v6M8 11h6"/></svg>
+              </div>
+            </div>
+            <div class="act-card__body">
+              <h3 class="act-card__title">{{ act.title }}</h3>
+              <p class="act-card__desc">{{ act.desc }}</p>
+            </div>
+          </div>
+        }
+      </div>
+    </div>
+  </section>
+
+  @if (selectedImg) {
+    <div class="lightbox" (click)="closeLightbox()">
+      <div class="lightbox__inner" (click)="$event.stopPropagation()">
+        <button class="lightbox__close" (click)="closeLightbox()">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6L6 18M6 6l12 12"/></svg>
+        </button>
+        <img [src]="selectedImg" [alt]="selectedTitle" class="lightbox__img"/>
+        <div class="lightbox__title">{{ selectedTitle }}</div>
+      </div>
+    </div>
+  }}
+<section class="act-cta">
+  <div class="wrap act-cta__inner">
+    <div>
+      <div class="kicker kicker--light">¿Te sumas?</div>
+      <h2 class="act-cta__title">Cada acción <em>cuenta</em>.</h2>
+      <p class="act-cta__lede">Tu tiempo, tu voz o tu apoyo económico. Todo suma cuando se trata de devolverle el vuelo a quien lo perdió.</p>
+    </div>
+    <div class="act-cta__actions">
+      <a href="/donar" class="btn btn-accent">Donar ahora</a>
+      <a href="/que-hacer" class="btn btn-ghost-light">¿Encontré un ave?</a>
+    </div>
+  </div>
+</section>
+
+<app-footer></app-footer>

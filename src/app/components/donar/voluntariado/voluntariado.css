@@ -1,0 +1,132 @@
+.volun {
+  padding: 100px 0;
+  background: var(--cream-50);
+}
+
+.volun__head {
+  max-width: 560px;
+  margin: 0 auto 56px;
+  text-align: center;
+}
+
+.volun__title {
+
+  font-size: clamp(36px, 4vw, 56px);
+  font-weight: 300;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  margin: 12px 0 16px;
+  color: var(--ink-950);
+}
+
+.volun__desc {
+  font-size: 16px;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.volun__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-bottom: 56px;
+}
+
+.volun-card {
+  border-radius: var(--r-lg);
+  padding: 36px 28px;
+  border: 1px solid var(--line);
+  background: #fff;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.volun-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+
+.volun-card--green { border-top: 3px solid var(--green-500); }
+.volun-card--sea { border-top: 3px solid var(--sea-600); }
+.volun-card--clay { border-top: 3px solid var(--clay-500); }
+
+.volun-card__icon {
+  font-size: 36px;
+  margin-bottom: 16px;
+}
+
+.volun-card__title {
+  font-size: 20px;
+  font-weight: 500;
+  color: var(--ink-950);
+  letter-spacing: -0.01em;
+  margin-bottom: 12px;
+}
+
+.volun-card__desc {
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.volun__cta-wrap {
+  display: flex;
+  justify-content: center;
+}
+
+.volun__cta-box {
+  background: var(--green-950);
+  color: var(--cream-50);
+  border-radius: var(--r-xl);
+  padding: 56px 64px;
+  text-align: center;
+  max-width: 680px;
+  width: 100%;
+}
+
+.volun__cta-title {
+  font-family: var(--f-display);
+  font-size: 32px;
+  font-weight: 300;
+  letter-spacing: -0.02em;
+  margin-bottom: 16px;
+}
+
+.volun__cta-desc {
+  font-size: 15px;
+  color: oklch(0.8 0.05 145);
+  line-height: 1.6;
+  margin-bottom: 32px;
+  max-width: 480px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.volun__cta-actions {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn-ghost {
+  background: oklch(1 0 0 / 0.08);
+  color: var(--cream-50);
+  border: 1px solid oklch(1 0 0 / 0.18);
+  padding: 14px 22px;
+  border-radius: 999px;
+  font-size: 15px;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: background 0.15s;
+  text-decoration: none;
+}
+
+.btn-ghost:hover { background: oklch(1 0 0 / 0.14); }
+
+@media (max-width: 768px) {
+  .volun__grid { grid-template-columns: 1fr; }
+  .volun__cta-box { padding: 40px 24px; }
+  .volun__cta-actions { flex-direction: column; align-items: center; }
+}

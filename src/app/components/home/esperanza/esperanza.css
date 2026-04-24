@@ -1,0 +1,94 @@
+.esperanza {
+  padding: 60px 0;
+  background: var(--cream-50);
+}
+
+.esperanza__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.esperanza__title {
+  font-size: clamp(28px, 3vw, 42px);
+  font-weight: 300;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  margin: 12px 0 16px;
+}
+
+.esperanza__title em {
+  font-style: italic;
+  color: var(--green-700);
+}
+
+.esperanza__desc {
+  color: var(--muted);
+  line-height: 1.6;
+  font-size: 15px;
+}
+
+.esperanza__right {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.esperanza__teaming {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: var(--green-950);
+  border-radius: var(--r-lg);
+  padding: 20px;
+  color: var(--cream-50);
+}
+
+.esperanza__teaming-badge {
+  background: var(--green-300);
+  color: var(--green-950);
+  border-radius: var(--r-md);
+  padding: 10px 14px;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.esperanza__teaming-euro {
+  font-size: 26px;
+  font-weight: 300;
+  letter-spacing: -0.03em;
+  line-height: 1;
+}
+
+.esperanza__teaming-label {
+  font-size: 9px;
+  font-family: var(--f-mono);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-top: 2px;
+}
+
+.esperanza__teaming-title {
+  font-size: 15px;
+  font-weight: 500;
+  margin-bottom: 4px;
+}
+
+.esperanza__teaming-desc {
+  font-size: 13px;
+  color: oklch(0.8 0.05 145);
+  line-height: 1.4;
+}
+
+.esperanza__actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 768px) {
+  .esperanza__grid { grid-template-columns: 1fr; gap: 32px; }
+  .esperanza__actions { flex-direction: column; }
+}
+

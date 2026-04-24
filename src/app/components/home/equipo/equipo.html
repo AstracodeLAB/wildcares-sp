@@ -1,0 +1,30 @@
+<section class="team" id="sobre">
+  <div class="wrap">
+    <div class="team__head">
+      <div>
+        <div class="kicker">El equipo</div>
+        <h2 class="team__title">
+          Sobre<em>nosotros</em>
+        </h2>
+      </div>
+      <p class="team__lede">
+        Un equipo multidisciplinar de veterinarios, biólogos y educadores
+        que comparten una misma vocación: proteger la biodiversidad del
+        litoral andaluz.
+      </p>
+    </div>
+
+    <div class="team__grid">
+      @for (person of people; track person.name) {
+        <div class="person">
+          <div class="person__photo" [style.backgroundImage]="'url(' + person.img + ')'"></div>
+          <div class="person__info">
+            <div class="person__name">{{ person.name }}</div>
+            <div class="person__role">{{ person.role }}</div>
+          </div>
+        </div>
+      }
+    </div>
+
+  </div>
+</section>

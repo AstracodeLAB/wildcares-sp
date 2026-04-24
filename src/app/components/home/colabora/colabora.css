@@ -1,0 +1,128 @@
+.colab {
+  padding: 60px 0;
+  background: var(--cream-50, #fafaf7);
+  @media screen and (min-width: 768px) {
+    padding: 80px 0;
+  }
+  @media screen and (min-width: 1024px) {
+    padding: 100px 0;
+  }
+  }
+
+.colab__head {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto 56px;
+}
+
+.colab__title {
+  font-size: clamp(36px, 4vw, 52px);
+  font-weight: 300;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  margin: 12px 0 16px;
+}
+
+.colab__title em {
+  font-style: italic;
+  color: var(--green-700, #2d5a27);
+}
+
+.colab__lede {
+  font-size: 16px;
+  color: var(--muted, #888);
+  line-height: 1.6;
+}
+
+.colab__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.colab-card {
+  background: #fff;
+  border: 1px solid oklch(0 0 0 / 0.08);
+  border-radius: 16px;
+  padding: 36px 28px;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s;
+  @media (min-width: 768px) {
+    gap: 16px;
+  }
+}
+
+.colab-card:hover {
+  transform: translateY(-4px);
+}
+
+.colab-card--featured {
+  background: var(--green-700, #2d5a27);
+  color: var(--cream-50, #fafaf7);
+  border-color: var(--green-700, #2d5a27);
+}
+
+.colab-card--accent {
+  background: var(--green-900, #1a3a1a);
+  color: var(--cream-50, #fafaf7);
+  border-color: var(--green-900, #1a3a1a);
+}
+
+.colab-card__icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: oklch(0 0 0 / 0.06);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.colab-card--featured .colab-card__icon,
+.colab-card--accent .colab-card__icon {
+  background: oklch(1 0 0 / 0.1);
+}
+
+.colab-card__title {
+  font-size: 22px;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  margin-bottom: 0;
+}
+
+.colab-card__desc {
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--muted, #888);
+  flex: 1;
+}
+
+.colab-card--featured .colab-card__desc,
+.colab-card--accent .colab-card__desc {
+  color: oklch(0.85 0.05 145);
+}
+
+.colab-card__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+  color: var(--green-700, #2d5a27);
+  transition: gap 0.15s;
+}
+
+.colab-card--featured .colab-card__cta,
+.colab-card--accent .colab-card__cta {
+  color: var(--cream-50, #fafaf7);
+}
+
+.colab-card__cta:hover {
+  gap: 10px;
+}
+
+@media (max-width: 768px) {
+  .colab__grid { grid-template-columns: 1fr; }
+}

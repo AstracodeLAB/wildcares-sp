@@ -1,0 +1,30 @@
+<section class="volun" id="voluntariado">
+  <div class="wrap">
+    <div class="volun__head">
+      <div class="kicker">Únete al equipo</div>
+      <h2 class="volun__title">Voluntariado</h2>
+      <p class="volun__desc">No podríamos hacer nuestro trabajo sin vuestra ayuda. El voluntariado tiene una duración mínima de tres meses y formación gratuita incluida.</p>
+    </div>
+
+    <div class="volun__grid">
+      @for (area of areas; track area.title) {
+        <div class="volun-card" [class]="'volun-card volun-card--' + area.color">
+          <div class="volun-card__icon">{{ area.icon }}</div>
+          <h3 class="volun-card__title">{{ area.title }}</h3>
+          <p class="volun-card__desc">{{ area.desc }}</p>
+        </div>
+      }
+    </div>
+
+    <div class="volun__cta-wrap">
+      <div class="volun__cta-box">
+        <h3 class="volun__cta-title">¿Cómo apuntarme?</h3>
+        <p class="volun__cta-desc">Para hacer la solicitud de voluntariado completa el siguiente formulario. Nos pondremos en contacto contigo en menos de 48 horas.</p>
+        <div class="volun__cta-actions">
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSfFM1GXuDFyPjj0a1uCj6n6lDj-ucbqTU0FTnTbfGpyG-iMXQ/viewform" target="_blank" class="btn btn-primary">Formulario de voluntariado</a>
+          <a href="mailto:wildcares2@gmail.com" class="btn btn-ghost">wildcares2&#64;gmail.com</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
