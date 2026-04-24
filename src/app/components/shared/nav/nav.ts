@@ -18,7 +18,7 @@ export class NavComponent {
   items = [
     { id: 'home', label: 'Inicio', href: '/' },
     { id: 'actividades', label: 'Actividades', href: '/actividades' },
-    { id: 'ave', label: '¿Encontré un ave?', href: '/que-hacer' },
+    { id: 'ave', label: '¿Has encontrado un ave?', href: '/que-hacer' },
     { id: 'proyectos', label: 'Proyectos', href: '/#proyectos' },
     { id: 'colabora', label: 'Colabora', href: '/#colabora' },
     { id: 'sobre', label: 'Sobre nosotros', href: '/#sobre' },
