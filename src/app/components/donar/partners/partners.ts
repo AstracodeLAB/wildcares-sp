@@ -19,5 +19,9 @@ export class Partners {
     { name: 'Partner 6', logo: 'assets/partners/GuardaBosques.png' },
     { name: 'Partner 6', logo: 'assets/partners/logoAyuntamiento.png' },
     { name: 'Partner 6', logo: 'assets/partners/basoa.png' },
+    { name: 'Aracavia', logo: 'assets/partners/aracavia.png' },
+    { name: 'Caminos', logo: 'assets/partners/caminos.jpg' },
+    { name: 'Oxigeno', logo: 'assets/partners/oxigeno.webp' },
+    { name: 'Todo Barro', logo: 'assets/partners/todobarro.png' },
   ];
 }

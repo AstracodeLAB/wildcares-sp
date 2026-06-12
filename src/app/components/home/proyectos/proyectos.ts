@@ -16,6 +16,7 @@ export class ProyectosComponent {
   tabs = [
     { id: 'wildcares', label: '🕊 Proyecto Wildcares' },
     { id: 'rios', label: '🌊 Proyecto Ríos' },
+    { id: 'terranido', label: '🏠 Proyecto Terranido' },
   ];
 
   youtubeUrl: SafeResourceUrl;
@@ -40,9 +41,15 @@ export class ProyectosComponent {
         'Protección de colonias y lugares de nidificación',
         'Educación ambiental en colegios, institutos y universidades',
         'Actividades adaptadas para personas con diversidad funcional',
+        'Proyectos de conservación'
       ],
       pdf: 'assets/pdfs/dossier-wildcares.pdf',
       video: true,
+      financiadoLabel: 'Cofinanciado por',
+      financiadores: [
+        { name: 'Málaga Province Environment Foundation', logo: 'assets/proyectos/Malaga_Province_Environment_Foundation.svg' },
+        { name: 'Fundación Oxígeno', logo: 'assets/proyectos/oxigeno.webp' },
+      ],
     },
     rios: {
       name: 'Proyecto Ríos',
@@ -58,10 +65,30 @@ export class ProyectosComponent {
         'Fosas semicirculares: retención hídrica y mejora del suelo',
         'Educación comunitaria sobre gestión sostenible del agua',
       ],
+      financiadoLabel: 'Financiado por',
       financiadores: [
         { name: 'Diputación Provincial de Málaga', logo: 'assets/proyectos/DiputacionProvincialMalaga.jpg' },
         { name: 'Málaga Viva', logo: 'assets/proyectos/ILoveMalagaViva.jpg' },
         { name: 'Fundación Unicaja', logo: 'assets/proyectos/FundacionUnicaja.jpg' },
+      ],
+      video: false,
+    },
+    terranido: {
+      name: 'Proyecto Terranido',
+      desc: 'Iniciativa dedicada a la construcción e instalación de nidos bioceramicos sostenibles para golondrinas, aviones y vencejos. En colaboración con Todobarro, empresa de cerámica artesanal que se encarga del diseño e innovación de los nidos.',
+      kpis: [
+        { val: '3', unit: '', label: 'Líneas de acción' },
+        { val: 'Andalucía', unit: '', label: 'Lugar de actuación' },
+        { val: '2026', unit: '', label: 'Año de inicio' },
+      ],
+      lineas: [
+        'Construcción de nidos bioceramicos de barro para Golondrinas, aviones y Vencejos',
+        'Educación ambiental enfocada en mejorar la conservación de golondrinas, aviones y vencejos',
+        'Mejorar la nidificación de vencejos, aviones y golondrinas',
+        'Implementar una mejor ecología circular, nuevas edificaciones y control de plagas',
+      ],
+      colaboradores: [
+        { name: 'Todobarro.', desc: 'Empresa de cerámica artesanal encargada del diseño de los nidos' },
       ],
       video: false,
     },

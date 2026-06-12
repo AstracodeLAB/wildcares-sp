@@ -13,9 +13,9 @@ export class HeroComponent implements OnInit, OnDestroy {
   parallaxY = 0;
 
   stats = [
-    { num: 2340, suffix: '+', label: 'Aves rescatadas' },
-    { num: 82, suffix: '%', label: 'Tasa liberación' },
-    { num: 8, suffix: '', label: 'Años cuidando' },
+    { num: 237, suffix: '+', label: 'Aves rescatadas' },
+    { num: 72, suffix: '%', label: 'Tasa liberación' },
+    { num: 3, suffix: '', label: 'Años cuidando' },
   ];
 
   private onScroll = () => {

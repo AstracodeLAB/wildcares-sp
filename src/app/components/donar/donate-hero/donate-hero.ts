@@ -6,4 +6,11 @@ import { Component } from '@angular/core';
   templateUrl: './donate-hero.html',
   styleUrls: ['./donate-hero.css']
 })
-export class DonateHeroComponent {}
+export class DonateHeroComponent {
+  scrollToSection(sectionId: string): void {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  }
+}

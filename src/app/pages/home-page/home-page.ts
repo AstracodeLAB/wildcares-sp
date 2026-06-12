@@ -8,6 +8,7 @@ import { ProyectosComponent } from '../../components/home/proyectos/proyectos';
 import { ColaboraComponent } from '../../components/home/colabora/colabora';
 import { EquipoComponent } from '../../components/home/equipo/equipo';
 import { CtaBandComponent } from '../../components/home/cta-band/cta-band';
+import { Partners } from '../../components/donar/partners/partners';
 
 @Component({
   selector: 'app-home-page',
@@ -20,6 +21,7 @@ import { CtaBandComponent } from '../../components/home/cta-band/cta-band';
     QueHacerComponent,
     ProyectosComponent,
     ColaboraComponent,
+    Partners,
     EquipoComponent,
     CtaBandComponent,
   ],
@@ -38,6 +40,7 @@ import { CtaBandComponent } from '../../components/home/cta-band/cta-band';
    
     <app-proyectos></app-proyectos>
     <app-colabora></app-colabora>
+    <app-partners></app-partners>
     <app-equipo></app-equipo>
     <app-cta-band></app-cta-band>
     <app-footer></app-footer>

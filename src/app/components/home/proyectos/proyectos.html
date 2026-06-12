@@ -46,11 +46,25 @@
 
         @if (current.financiadores) {
           <div class="proj__financiadores">
-            <div class="kicker kicker--light" style="margin-bottom: 16px;">Financiado por</div>
+            <div class="kicker kicker--light" style="margin-bottom: 16px;">{{ current.financiadoLabel || 'Financiado por' }}</div>
             <div class="proj__financiadores-logos">
               @for (f of current.financiadores; track f.name) {
                 <div class="proj__financiador">
                   <img [src]="f.logo" [alt]="f.name"/>
+                </div>
+              }
+            </div>
+          </div>
+        }
+
+        @if (current.colaboradores) {
+          <div class="proj__colaboradores">
+            <div class="kicker kicker--light" style="margin-bottom: 16px;">En colaboración con</div>
+            <div class="proj__colaboradores-list">
+              @for (c of current.colaboradores; track c.name) {
+                <div class="proj__colaborador">
+                  <strong>{{ c.name }}</strong>
+                  <p style="font-size: 14px; color: #666; margin-top: 4px;">{{ c.desc }}</p>
                 </div>
               }
             </div>
