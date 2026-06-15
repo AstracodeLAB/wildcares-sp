@@ -12,7 +12,7 @@
         </p>
         <div class="footer__socials">
           @for (s of socials; track s.id) {
-            <a [href]="s.href" class="footer__social" [attr.aria-label]="s.label">
+            <a [href]="s.href" class="footer__social" [attr.aria-label]="s.label" target="_blank" rel="noopener noreferrer">
               <lucide-icon [img]="s.icon" [size]="16" [strokeWidth]="1.8"></lucide-icon>
             </a>
           }

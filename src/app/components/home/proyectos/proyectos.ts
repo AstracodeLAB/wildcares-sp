@@ -8,7 +8,7 @@ import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
   standalone: true,
   imports: [CommonModule, RouterModule],
   templateUrl: './proyectos.html',
-  styleUrls: ['./proyectos.css']
+  styleUrls: ['./proyectos.css'],
 })
 export class ProyectosComponent {
   activeTab = 'wildcares';
@@ -23,7 +23,7 @@ export class ProyectosComponent {
 
   constructor(private sanitizer: DomSanitizer) {
     this.youtubeUrl = this.sanitizer.bypassSecurityTrustResourceUrl(
-      'https://www.youtube.com/embed/Y-IUDmlqQ_c'
+      'https://www.youtube.com/embed/8s8oI__0Mb8',
     );
   }
 
@@ -41,13 +41,16 @@ export class ProyectosComponent {
         'Protección de colonias y lugares de nidificación',
         'Educación ambiental en colegios, institutos y universidades',
         'Actividades adaptadas para personas con diversidad funcional',
-        'Proyectos de conservación'
+        'Proyectos de conservación',
       ],
       pdf: 'assets/pdfs/dossier-wildcares.pdf',
       video: true,
       financiadoLabel: 'Cofinanciado por',
       financiadores: [
-        { name: 'Málaga Province Environment Foundation', logo: 'assets/proyectos/Malaga_Province_Environment_Foundation.svg' },
+        {
+          name: 'Málaga Province Environment Foundation',
+          logo: 'assets/proyectos/Malaga_Province_Environment_Foundation.svg',
+        },
         { name: 'Fundación Oxígeno', logo: 'assets/proyectos/oxigeno.webp' },
       ],
     },
@@ -67,7 +70,10 @@ export class ProyectosComponent {
       ],
       financiadoLabel: 'Financiado por',
       financiadores: [
-        { name: 'Diputación Provincial de Málaga', logo: 'assets/proyectos/DiputacionProvincialMalaga.jpg' },
+        {
+          name: 'Diputación Provincial de Málaga',
+          logo: 'assets/proyectos/DiputacionProvincialMalaga.jpg',
+        },
         { name: 'Málaga Viva', logo: 'assets/proyectos/ILoveMalagaViva.jpg' },
         { name: 'Fundación Unicaja', logo: 'assets/proyectos/FundacionUnicaja.jpg' },
       ],
@@ -88,7 +94,10 @@ export class ProyectosComponent {
         'Implementar una mejor ecología circular, nuevas edificaciones y control de plagas',
       ],
       colaboradores: [
-        { name: 'Todobarro.', desc: 'Empresa de cerámica artesanal encargada del diseño de los nidos' },
+        {
+          name: 'Todobarro.',
+          desc: 'Empresa de cerámica artesanal encargada del diseño de los nidos',
+        },
       ],
       video: false,
     },
