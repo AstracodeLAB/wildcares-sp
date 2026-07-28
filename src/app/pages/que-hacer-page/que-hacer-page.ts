@@ -41,8 +41,8 @@ export class QueHacerPageComponent {
       title: 'Paseriformes',
       img: 'assets/quehacer/gorrion.JPG',
       pdfs: [
-        { label: 'Ficha 1', url: 'assets/pdfs/Verdecillo,_Verderón,_Jilguero,_Pardillo.pdf' },
-        { label: 'Ficha 2', url: 'assets/pdfs/paseriformes-2.pdf' },
+        { label: 'Verdecillos', url: 'assets/pdfs/Verdecillo,_Verderón,_Jilguero,_Pardillo.pdf' },
+        { label: 'Gorriones', url: 'assets/pdfs/paseriformes-2.pdf' },
       ],
     },
   ];
