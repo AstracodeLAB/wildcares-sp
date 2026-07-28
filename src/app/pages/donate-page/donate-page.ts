@@ -10,6 +10,7 @@ import { Teaming } from '../../components/donar/teaming/teaming';
 import { Voluntariado } from '../../components/donar/voluntariado/voluntariado';
 import { Partners } from '../../components/donar/partners/partners';
 import { EmpresasComponent } from '../../components/donar/empresas/empresas';
+import { VoluntariadoEmpresasComponent } from '../../components/donar/voluntariado-empresas/voluntariado-empresas';
 
 @Component({
   selector: 'app-donate-page',
@@ -26,6 +27,7 @@ import { EmpresasComponent } from '../../components/donar/empresas/empresas';
     Donativos,
     Partners,
     EmpresasComponent,
+    VoluntariadoEmpresasComponent,
   ],
   template: `
     <app-nav [active]="'colabora'" [onDark]="true"></app-nav>
@@ -39,6 +41,7 @@ import { EmpresasComponent } from '../../components/donar/empresas/empresas';
       <app-teaming></app-teaming>
       <app-voluntariado></app-voluntariado>
       <app-empresas></app-empresas>
+      <app-voluntariado-empresas></app-voluntariado-empresas>
       <app-partners></app-partners>
     }
 

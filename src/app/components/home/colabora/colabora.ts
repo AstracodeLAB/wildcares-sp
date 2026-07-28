@@ -7,7 +7,7 @@ import { RouterModule } from '@angular/router';
   standalone: true,
   imports: [CommonModule, RouterModule],
   templateUrl: './colabora.html',
-  styleUrls: ['./colabora.css']
+  styleUrls: ['./colabora.css'],
 })
 export class ColaboraComponent {
   opts = [
@@ -17,7 +17,7 @@ export class ColaboraComponent {
       desc: 'Aporta lo que esté en tu mano. Cada euro cuenta y va íntegro a nuestros proyectos de rescate y rehabilitación.',
       cta: 'Donar ahora',
       href: '/donar',
-      featured: true
+      featured: true,
     },
     {
       icon: 'users',
@@ -25,16 +25,16 @@ export class ColaboraComponent {
       desc: 'Únete a un equipo comprometido con la fauna. Formación gratuita y horario flexible.',
       cta: 'Apuntarme',
       href: '/donar/#voluntariado',
-      featured: false
+      featured: false,
     },
     {
       icon: 'handshake',
       title: 'Partners',
       desc: 'Colabora desde tu empresa con una visión compartida: la conservación del litoral malagueño.',
       cta: 'Info para empresas',
-      href: '/donar/#partners',
+      href: '/donar/#empresas',
       featured: false,
-      accent: true
+      accent: true,
     },
   ];
 }
