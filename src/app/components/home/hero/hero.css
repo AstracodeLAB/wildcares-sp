@@ -10,7 +10,7 @@
 .hero__bg {
   position: absolute;
   inset: -20%;
- 
+
   will-change: transform;
   background-color: #1a3a1a;
 }
@@ -95,7 +95,6 @@
   margin-bottom: 48px;
   width: 200px;
   align-items: flex-start;
-  
 }
 
 .btn {
@@ -110,13 +109,11 @@
   cursor: pointer;
   border: none;
   transition: all 0.15s;
- 
 }
 
 .btn-accent {
   background: #e8820c;
   color: #fff;
-  
 }
 
 .btn-accent:hover {
@@ -201,8 +198,14 @@
   color: #1a3a1a;
 }
 
-.hero__viz-float--1 { bottom: 100px; left: -24px; }
-.hero__viz-float--2 { top: -20px; right: -24px; }
+.hero__viz-float--1 {
+  bottom: 100px;
+  left: -24px;
+}
+.hero__viz-float--2 {
+  top: -20px;
+  right: -24px;
+}
 
 .hero__viz-float-icon {
   width: 36px;
@@ -214,8 +217,14 @@
   flex-shrink: 0;
 }
 
-.hero__viz-float-icon--green { background: #e1f5ee; color: #0f6e56; }
-.hero__viz-float-icon--clay { background: #faeeda; color: #854f0b; }
+.hero__viz-float-icon--green {
+  background: #e1f5ee;
+  color: #0f6e56;
+}
+.hero__viz-float-icon--clay {
+  background: #faeeda;
+  color: #854f0b;
+}
 
 .hero__viz-float-label {
   font-size: 11px;
@@ -233,8 +242,11 @@
 @media (max-width: 768px) {
   .hero__inner {
     grid-template-columns: 1fr;
-    
   }
-  .hero__viz { display: none; }
-  .hero__stats { gap: 24px; }
+  .hero__viz {
+    display: none;
+  }
+  .hero__stats {
+    gap: 24px;
+  }
 }

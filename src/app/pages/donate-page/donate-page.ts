@@ -9,6 +9,7 @@ import { Donativos } from '../../components/donar/donativos/donativos';
 import { Teaming } from '../../components/donar/teaming/teaming';
 import { Voluntariado } from '../../components/donar/voluntariado/voluntariado';
 import { Partners } from '../../components/donar/partners/partners';
+import { EmpresasComponent } from '../../components/donar/empresas/empresas';
 
 @Component({
   selector: 'app-donate-page',
@@ -23,45 +24,47 @@ import { Partners } from '../../components/donar/partners/partners';
     Teaming,
     Voluntariado,
     Donativos,
-    Partners
+    Partners,
+    EmpresasComponent,
   ],
   template: `
     <app-nav [active]="'colabora'" [onDark]="true"></app-nav>
 
-     @if (done) {
-      <app-success
-        [amount]="finalAmount"
-        [freq]="freq"
-        (reset)="onReset()"
-      ></app-success>
+    @if (done) {
+      <app-success [amount]="finalAmount" [freq]="freq" (reset)="onReset()"></app-success>
     } @else {
       <app-donate-hero></app-donate-hero>
       <app-hazte-socio></app-hazte-socio>
       <app-donativos></app-donativos>
       <app-teaming></app-teaming>
       <app-voluntariado></app-voluntariado>
+      <app-empresas></app-empresas>
       <app-partners></app-partners>
     }
 
     <app-footer></app-footer>
   `,
-  styles: [`
-    .donate-main {
-      padding: 80px 24px;
-      background: var(--cream-50, #fafaf7);
-      max-width: 1100px;
-      margin: 0 auto;
-    }
-    .donate-grid {
-      display: grid;
-      grid-template-columns: 1fr 420px;
-      gap: 40px;
-      align-items: start;
-    }
-    @media (max-width: 768px) {
-      .donate-grid { grid-template-columns: 1fr; }
-    }
-  `]
+  styles: [
+    `
+      .donate-main {
+        padding: 80px 24px;
+        background: var(--cream-50, #fafaf7);
+        max-width: 1100px;
+        margin: 0 auto;
+      }
+      .donate-grid {
+        display: grid;
+        grid-template-columns: 1fr 420px;
+        gap: 40px;
+        align-items: start;
+      }
+      @media (max-width: 768px) {
+        .donate-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+    `,
+  ],
 })
 export class DonatePage {
   freq: 'once' | 'month' = 'once';

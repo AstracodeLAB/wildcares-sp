@@ -1,0 +1,88 @@
+<section class="empresas" id="empresas">
+  <div class="wrap">
+    <div class="empresas__head">
+      <div class="kicker kicker--light">Responsabilidad Social Corporativa</div>
+      <h2 class="empresas__title">Naturaleza <em>y empresa</em></h2>
+      <p class="empresas__lede">
+        Vuestro equipo puede vivir la conservación en primera persona: desde una donación hasta una
+        jornada de plantación con desconexión al aire libre incluida.
+      </p>
+    </div>
+
+    <div class="empresas__cols">
+      <div class="empresas__col">
+        <h3 class="empresas__colTitle">Beneficios de colaborar</h3>
+        <ul class="empresas__list">
+          <li>Desarrolláis vuestra Responsabilidad Social Corporativa</li>
+          <li>Generáis impacto ambiental positivo y medible</li>
+          <li>Mejoráis la cohesión de vuestros equipos</li>
+          <li>Reforzáis vuestra reputación y compromiso social</li>
+          <li>Participáis en proyectos reales de conservación en Málaga</li>
+        </ul>
+
+        <div class="empresas__fiscal">
+          <h4>Desgravación fiscal</h4>
+          <p>
+            Las donaciones pueden canalizarse a través de una entidad intermediaria que sí emite
+            certificado fiscal, conforme a la Ley 49/2002 de régimen fiscal de entidades sin fines
+            lucrativos e incentivos al mecenazgo.
+          </p>
+        </div>
+      </div>
+
+      <div class="empresas__col">
+        <h3 class="empresas__colTitle">Formas de colaborar</h3>
+        <div class="empresas__types">
+          @for (tipo of tipos; track tipo.title) {
+            <div class="tipo-card">
+              <div class="tipo-card__icon" [innerHTML]="tipo.icon"></div>
+              <h4 class="tipo-card__title">{{ tipo.title }}</h4>
+              <p class="tipo-card__desc">{{ tipo.desc }}</p>
+            </div>
+          }
+        </div>
+      </div>
+    </div>
+
+    <div class="empresas__docs">
+      <p>¿Queréis ver todos los detalles?</p>
+      <div class="empresas__docsLinks">
+        <a href="/assets/pdfs/naturaleza-para-empresas.pdf" target="_blank" class="doc-link">
+          Descargar tríptico
+          <svg
+            width="14"
+            height="14"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="M12 5v14M5 12l7 7 7-7" />
+          </svg>
+        </a>
+        <a href="/assets/pdfs/presentacion-empresas.pdf" target="_blank" class="doc-link">
+          Ver presentación completa
+          <svg
+            width="14"
+            height="14"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="M12 5v14M5 12l7 7 7-7" />
+          </svg>
+        </a>
+      </div>
+    </div>
+
+    <div class="empresas__thanks">
+      <div class="kicker">Gracias a quienes ya confían en nosotros</div>
+      <!-- Aquí va vuestro grid de logos actual, tal cual -->
+    </div>
+  </div>
+</section>
