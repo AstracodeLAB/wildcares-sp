@@ -23,5 +23,6 @@ export class Partners {
     { name: 'Caminos', logo: 'assets/partners/caminos.jpg' },
     { name: 'Oxigeno', logo: 'assets/partners/oxigeno.webp' },
     { name: 'Todo Barro', logo: 'assets/partners/todobarro.png' },
+    { name: 'Astracodelab', logo: 'assets/partners/astracodelab.png' },
   ];
 }
