@@ -92,7 +92,6 @@
 }
 
 .footer__bottom {
-  border-top: 1px solid oklch(1 0 0 / 0.1);
   padding-top: 24px;
   display: flex;
   justify-content: space-between;
@@ -128,4 +127,27 @@
     gap: 12px;
     text-align: center;
   }
+}
+
+.footer__credit {
+  background: var(--green-950, #0f2610);
+  color: oklch(0.7 0.05 145);
+  text-align: center;
+  font-size: 12px;
+  padding: 14px 0;
+}
+
+.footer__credit a {
+  color: var(--cream-50, #fafaf7);
+  font-weight: 500;
+  text-decoration: none;
+  border-bottom: 1px solid oklch(1 0 0 / 0.25);
+  transition:
+    color 0.15s,
+    border-color 0.15s;
+}
+
+.footer__credit a:hover {
+  color: var(--green-300, #8fcf8a);
+  border-color: var(--green-300, #8fcf8a);
 }
