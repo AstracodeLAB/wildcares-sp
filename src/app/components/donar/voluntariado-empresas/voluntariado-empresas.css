@@ -1,33 +1,17 @@
 .rscBand {
-  max-width: 720px;
-  margin: 80px auto;
+  max-width: 1100px;
+  width: calc(100% - 40px);
+  margin: 100px auto;
   border-radius: var(--r-xl, 16px);
   overflow: hidden;
-}
-
-.rscBand__titleWrap {
-  background: var(--green-700, #2d5a27);
-  padding: 20px 24px;
-  text-align: center;
-}
-
-.rscBand__title {
-  color: var(--cream-50, #fafaf7);
-  font-size: 20px;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.02em;
-  margin: 0;
-}
-
-.rscBand__title span {
-  font-weight: 500;
-  opacity: 0.85;
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  min-height: 420px;
+  background: var(--green-950, #0f2610);
 }
 
 .rscBand__image {
-  width: 100%;
-  aspect-ratio: 16 / 10;
+  position: relative;
   overflow: hidden;
 }
 
@@ -38,35 +22,128 @@
   display: block;
 }
 
-.rscBand__cta {
-  background: var(--green-950, #0f2610);
-  padding: 28px 24px 32px;
-  text-align: center;
+/* Degradado que funde la foto con el verde del contenido */
+.rscBand__image::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    transparent 55%,
+    var(--green-950, #0f2610) 100%
+  );
+  pointer-events: none;
+}
+
+.rscBand__content {
+  position: relative;
+  padding: 56px 56px 56px 48px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* ligero solape hacia la izquierda para reforzar la fusión con la imagen */
+  margin-left: -60px;
+}
+
+.rscBand__eyebrow {
+  display: inline-block;
+  width: fit-content;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--green-300, #8fcf8a);
+  background: oklch(1 0 0 / 0.08);
+  border: 1px solid oklch(1 0 0 / 0.14);
+  padding: 6px 14px;
+  border-radius: 999px;
+  margin-bottom: 18px;
+}
+
+.rscBand__title {
+  color: var(--cream-50, #fafaf7);
+  font-size: clamp(26px, 3vw, 34px);
+  font-weight: 300;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+  margin: 0 0 18px;
 }
 
 .rscBand__text {
-  color: oklch(0.9 0.03 145);
+  color: oklch(0.85 0.04 145);
   font-size: 15px;
-  line-height: 1.6;
-  margin: 0 0 20px;
+  line-height: 1.7;
+  margin: 0 0 28px;
+  max-width: 40ch;
 }
 
 .rscBand__text strong {
   color: var(--cream-50, #fafaf7);
+  font-weight: 600;
 }
 
 .rscBand__btn {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  width: fit-content;
   background: var(--cream-50, #fafaf7);
   color: var(--green-950, #0f2610);
   font-size: 14px;
   font-weight: 600;
   text-decoration: none;
-  padding: 14px 32px;
+  padding: 14px 28px;
   border-radius: 999px;
-  transition: transform 0.15s;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.rscBand__btn svg {
+  transition: transform 0.15s ease;
 }
 
 .rscBand__btn:hover {
   transform: translateY(-2px);
+  box-shadow: 0 8px 20px oklch(0 0 0 / 0.25);
+}
+
+.rscBand__btn:hover svg {
+  transform: translateX(2px);
+}
+
+@media (max-width: 860px) {
+  .rscBand {
+    grid-template-columns: 1fr;
+    min-height: 0;
+    width: calc(100% - 32px);
+    margin: 64px auto;
+  }
+
+  .rscBand__image {
+    aspect-ratio: 16 / 9;
+  }
+
+  .rscBand__image::after {
+    background: linear-gradient(
+      180deg,
+      transparent 55%,
+      var(--green-950, #0f2610) 100%
+    );
+  }
+
+  .rscBand__content {
+    margin-left: 0;
+    padding: 40px 28px 44px;
+    margin-top: -40px;
+  }
+
+  .rscBand__text {
+    max-width: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .rscBand {
+    width: calc(100% - 24px);
+    margin: 48px auto;
+  }
 }
