@@ -16,6 +16,14 @@
   color: var(--cream-50);
 }
 
+.nav__links {
+  white-space: nowrap;
+}
+
+.nav__link {
+  white-space: nowrap;
+}
+
 .nav__mobile {
   display: none;
   flex-direction: column;
@@ -54,11 +62,15 @@
   text-decoration: none;
 }
 
-@media (max-width: 768px) {
+/* Hamburguesa hasta que el menú completo tenga espacio de sobra para no envolver */
+@media (max-width: 1200px) {
   .nav__links { display: none; }
   .nav__cta { display: none; }
   .nav__hamburger { display: flex; }
   .nav__inner { padding: 10px 16px; }
+}
+
+@media (max-width: 480px) {
   .nav__brand-text { display: none; }
 }
 
