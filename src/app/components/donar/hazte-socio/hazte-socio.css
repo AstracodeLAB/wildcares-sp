@@ -86,7 +86,7 @@
   background: #fff;
   border: 1px solid var(--line);
   border-radius: var(--r-lg);
-  padding: 40px 36px;
+  padding: 24px;
   display: flex;
   flex-direction: column;
   gap: 16px;

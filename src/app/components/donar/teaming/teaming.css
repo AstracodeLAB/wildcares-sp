@@ -11,6 +11,7 @@
   align-items: center;
 }
 
+
 .teaming__title {
 
   font-size: clamp(36px, 4vw, 56px);
@@ -146,6 +147,19 @@
 }
 
 @media (max-width: 768px) {
+  .wrap {
+    padding: 0;
+  }
   .teaming__grid { grid-template-columns: 1fr; gap: 40px; }
   .teaming__euro { font-size: 72px; }
+  .teaming__left {
+    
+    max-width: 90%;
+    margin: 0 auto;
+  }
+   .teaming__right {
+    
+    max-width: 90%;
+    margin: 0 auto;
+  }
 }

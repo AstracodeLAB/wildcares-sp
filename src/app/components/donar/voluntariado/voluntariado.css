@@ -10,7 +10,6 @@
 }
 
 .volun__title {
-
   font-size: clamp(36px, 4vw, 56px);
   font-weight: 300;
   letter-spacing: -0.03em;
@@ -37,7 +36,9 @@
   padding: 36px 28px;
   border: 1px solid var(--line);
   background: #fff;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .volun-card:hover {
@@ -45,9 +46,15 @@
   box-shadow: var(--shadow-md);
 }
 
-.volun-card--green { border-top: 3px solid var(--green-500); }
-.volun-card--sea { border-top: 3px solid var(--sea-600); }
-.volun-card--clay { border-top: 3px solid var(--clay-500); }
+.volun-card--green {
+  border-top: 3px solid var(--green-500);
+}
+.volun-card--sea {
+  border-top: 3px solid var(--sea-600);
+}
+.volun-card--clay {
+  border-top: 3px solid var(--clay-500);
+}
 
 .volun-card__icon {
   font-size: 36px;
@@ -123,10 +130,23 @@
   text-decoration: none;
 }
 
-.btn-ghost:hover { background: oklch(1 0 0 / 0.14); }
+.btn-ghost:hover {
+  background: oklch(1 0 0 / 0.14);
+}
 
 @media (max-width: 768px) {
-  .volun__grid { grid-template-columns: 1fr; }
-  .volun__cta-box { padding: 40px 24px; }
-  .volun__cta-actions { flex-direction: column; align-items: center; }
+  .volun__grid {
+    grid-template-columns: 1fr;
+  }
+  .volun__cta-box {
+    padding: 40px 10px;
+  }
+  .volun__cta-title {
+    margin: 0;
+  }
+  .volun__cta-actions {
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+  }
 }
