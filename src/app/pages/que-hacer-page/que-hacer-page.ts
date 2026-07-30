@@ -42,7 +42,7 @@ export class QueHacerPageComponent {
       img: 'assets/quehacer/gorrion.JPG',
       pdfs: [
         { label: 'Verdecillos', url: 'assets/pdfs/Verdecillo,_Verderón,_Jilguero,_Pardillo.pdf' },
-        { label: 'Gorriones', url: 'assets/pdfs/paseriformes-2.pdf' },
+        { label: 'Gorriones', url: 'assets/pdfs/Verdecillo,_Verderón,_Jilguero,_Pardillo.pdf'},
       ],
     },
   ];
