@@ -10,7 +10,9 @@
   margin: 0 auto;
 }
 
-.kicker--light { color: var(--green-300); }
+.kicker--light {
+  color: var(--green-300);
+}
 
 .act-hero__title {
   font-size: clamp(48px, 7vw, 80px);
@@ -42,7 +44,7 @@
 .act-nav__inner {
   display: flex;
   gap: 4px;
-  padding: 12px 0;
+  padding: 12px 32px;
 }
 
 .act-nav__btn {
@@ -110,7 +112,9 @@
   border: 1px solid var(--line);
   border-radius: var(--r-lg);
   overflow: hidden;
-  transition: transform 0.3s, box-shadow 0.3s;
+  transition:
+    transform 0.3s,
+    box-shadow 0.3s;
 }
 
 .act-card:hover {
@@ -199,7 +203,9 @@
   border-bottom: 1px solid var(--line);
 }
 
-.act-curso:last-child { border-bottom: none; }
+.act-curso:last-child {
+  border-bottom: none;
+}
 
 .act-curso__badge {
   font-size: 10px;
@@ -210,9 +216,18 @@
   letter-spacing: 0.06em;
 }
 
-.act-curso__badge--sea { background: var(--sea-100); color: var(--sea-800); }
-.act-curso__badge--clay { background: var(--clay-100); color: var(--clay-600); }
-.act-curso__badge--green { background: var(--green-100); color: var(--green-700); }
+.act-curso__badge--sea {
+  background: var(--sea-100);
+  color: var(--sea-800);
+}
+.act-curso__badge--clay {
+  background: var(--clay-100);
+  color: var(--clay-600);
+}
+.act-curso__badge--green {
+  background: var(--green-100);
+  color: var(--green-700);
+}
 
 .act-curso__titulo {
   font-size: 14px;
@@ -297,15 +312,26 @@
   gap: 8px;
   transition: background 0.15s;
   text-decoration: none;
-  justify-content: center;
+  justify-content: start;
 }
 
-.btn-ghost-light:hover { background: oklch(1 0 0 / 0.14); }
+.btn-ghost-light:hover {
+  background: oklch(1 0 0 / 0.14);
+}
 
 @media (max-width: 768px) {
-  .act-cards { grid-template-columns: 1fr; }
-  .act-nav__inner { overflow-x: auto; padding-bottom: 8px; }
-  .act-cta__inner { grid-template-columns: 1fr; gap: 32px; }
+  .act-cards {
+    grid-template-columns: 1fr;
+  }
+  .act-nav__inner {
+    overflow-x: auto;
+    padding-bottom: 8px;
+    scroll-padding-inline: 32px;
+  }
+  .act-cta__inner {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
 }
 
 .act-card--static {

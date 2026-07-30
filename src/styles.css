@@ -162,6 +162,7 @@ button {
   background: transparent;
   color: var(--fg);
   border: 1px solid var(--line);
+  
 }
 .btn-ghost:hover {
   border-color: var(--green-800);
