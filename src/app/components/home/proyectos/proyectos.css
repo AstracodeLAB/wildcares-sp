@@ -15,12 +15,10 @@
   justify-content: space-between;
   align-items: flex-start;
   margin-bottom: 0;
-  
+
   flex-wrap: wrap;
   @media screen and (min-width: 768px) {
-    
     gap: 32px;
-    
   }
 }
 
@@ -37,7 +35,9 @@
   color: var(--green-300);
 }
 
-.kicker--light { color: var(--green-300); }
+.kicker--light {
+  color: var(--green-300);
+}
 
 .proj__tabs {
   display: flex;
@@ -144,7 +144,9 @@
   text-decoration: none;
 }
 
-.btn-ghost-light:hover { background: oklch(1 0 0 / 0.14); }
+.btn-ghost-light:hover {
+  background: oklch(1 0 0 / 0.14);
+}
 
 .proj__financiadores {
   margin-top: 32px;
@@ -196,8 +198,26 @@
   background: var(--green-800);
 }
 
+.proj__visual-img {
+  aspect-ratio: 4/3;
+  border-radius: var(--r-lg);
+  overflow: hidden;
+}
+
+.proj__visual-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 @media (max-width: 768px) {
-  .proj__showcase { grid-template-columns: 1fr; }
-  .proj__tabs { flex-wrap: wrap; }
-  .proj__media { position: static; }
+  .proj__showcase {
+    grid-template-columns: 1fr;
+  }
+  .proj__tabs {
+    flex-wrap: wrap;
+  }
+  .proj__media {
+    position: static;
+  }
 }

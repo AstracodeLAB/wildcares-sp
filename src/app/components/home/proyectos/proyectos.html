@@ -7,13 +7,18 @@
       </div>
       <div class="proj__tabs">
         @for (tab of tabs; track tab.id) {
-          <button class="proj__tab" [class.is-active]="activeTab === tab.id" (click)="setTab(tab.id)">{{ tab.label }}</button>
+          <button
+            class="proj__tab"
+            [class.is-active]="activeTab === tab.id"
+            (click)="setTab(tab.id)"
+          >
+            {{ tab.label }}
+          </button>
         }
       </div>
     </div>
 
     <div class="proj__showcase">
-
       <div class="proj__info">
         <h3 class="proj__name">{{ current.name }}</h3>
         <p class="proj__desc">{{ current.desc }}</p>
@@ -21,36 +26,69 @@
         <div class="proj__kpis">
           @for (kpi of current.kpis; track kpi.label) {
             <div class="proj__kpi">
-              <div class="proj__kpi-val">{{ kpi.val }}<sup>{{ kpi.unit }}</sup></div>
+              <div class="proj__kpi-val">
+                {{ kpi.val }}<sup>{{ kpi.unit }}</sup>
+              </div>
               <div class="proj__kpi-lab">{{ kpi.label }}</div>
             </div>
           }
         </div>
 
-        <div class="kicker kicker--light" style="margin-bottom: 16px;">Líneas de trabajo</div>
+        <div class="kicker kicker--light" style="margin-bottom: 16px">Líneas de trabajo</div>
         <div class="proj__lineas">
           @for (linea of current.lineas; track linea) {
             <div class="proj__linea">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+              <svg
+                width="14"
+                height="14"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.4"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M20 6L9 17l-5-5" />
+              </svg>
               {{ linea }}
             </div>
           }
         </div>
 
         @if (current.pdf) {
-          <a [href]="current.pdf" download class="btn btn-ghost-light" style="margin-top: 24px; display: inline-flex;">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          <a
+            [href]="current.pdf"
+            download
+            class="btn btn-ghost-light"
+            style="margin-top: 24px; display: inline-flex"
+          >
+            <svg
+              width="14"
+              height="14"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+              <polyline points="7 10 12 15 17 10" />
+              <line x1="12" y1="15" x2="12" y2="3" />
+            </svg>
             Descargar dossier PDF
           </a>
         }
 
         @if (current.financiadores) {
           <div class="proj__financiadores">
-            <div class="kicker kicker--light" style="margin-bottom: 16px;">{{ current.financiadoLabel || 'Financiado por' }}</div>
+            <div class="kicker kicker--light" style="margin-bottom: 16px">
+              {{ current.financiadoLabel || 'Financiado por' }}
+            </div>
             <div class="proj__financiadores-logos">
               @for (f of current.financiadores; track f.name) {
                 <div class="proj__financiador">
-                  <img [src]="f.logo" [alt]="f.name"/>
+                  <img [src]="f.logo" [alt]="f.name" />
                 </div>
               }
             </div>
@@ -59,12 +97,12 @@
 
         @if (current.colaboradores) {
           <div class="proj__colaboradores">
-            <div class="kicker kicker--light" style="margin-bottom: 16px;">En colaboración con</div>
+            <div class="kicker kicker--light" style="margin-bottom: 16px">En colaboración con</div>
             <div class="proj__colaboradores-list">
               @for (c of current.colaboradores; track c.name) {
                 <div class="proj__colaborador">
                   <strong>{{ c.name }}</strong>
-                  <p style="font-size: 14px; color: #666; margin-top: 4px;">{{ c.desc }}</p>
+                  <p style="font-size: 14px; color: #666; margin-top: 4px">{{ c.desc }}</p>
                 </div>
               }
             </div>
@@ -75,13 +113,29 @@
       <div class="proj__media">
         @if (current.video) {
           <div class="proj__video-wrap">
-            <iframe [src]="youtubeUrl" title="Wildcares SP" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <iframe
+              [src]="youtubeUrl"
+              title="Wildcares SP"
+              frameborder="0"
+              allow="
+                accelerometer;
+                autoplay;
+                clipboard-write;
+                encrypted-media;
+                gyroscope;
+                picture-in-picture;
+              "
+              allowfullscreen
+            ></iframe>
+          </div>
+        } @else if (current.imagen) {
+          <div class="proj__visual-img">
+            <img [src]="current.imagen" [alt]="current.name" />
           </div>
         } @else {
           <div class="proj__visual proj__visual--rios"></div>
         }
       </div>
-
     </div>
   </div>
 </section>

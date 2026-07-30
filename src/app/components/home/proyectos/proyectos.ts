@@ -78,6 +78,7 @@ export class ProyectosComponent {
         { name: 'Fundación Unicaja', logo: 'assets/proyectos/FundacionUnicaja.jpg' },
       ],
       video: false,
+      imagen: 'assets/proyectos/proyecto-rios.jpeg',
     },
     terranido: {
       name: 'Proyecto Terranido',
@@ -100,6 +101,8 @@ export class ProyectosComponent {
         },
       ],
       video: false,
+      imagen: 'assets/proyectos/terranido-pic.JPG',
+      pdf: 'assets/pdfs/proyecto-terranido.pdf',
     },
   };
 
