@@ -1,0 +1,75 @@
+<app-nav [active]="'merch'" [onDark]="true"></app-nav>
+
+<section class="merch-hero">
+  <div class="merch-hero__inner">
+    <div class="kicker kicker--light">Merchandising solidario</div>
+    <h1 class="merch-hero__title">Llévate un <em>trocito</em><br />de la causa</h1>
+    <p class="merch-hero__lede">
+      Todo lo que ves aquí se hace por encargo: no tenemos tienda online con pago automático,
+      pero sí un equipo con muchas ganas de que tengas tu pieza favorita. Cada compra ayuda
+      directamente a nuestros proyectos de rescate y rehabilitación.
+    </p>
+  </div>
+</section>
+
+<section class="merch-section">
+  <div class="wrap">
+    <div class="merch__grid">
+      @for (product of products; track product.name) {
+        <div class="merch-card">
+          <div class="merch-card__img">
+            <img [src]="product.image" [alt]="product.name" loading="lazy" />
+            @if (product.tag) {
+              <span class="pill merch-card__tag">{{ product.tag }}</span>
+            }
+          </div>
+          <div class="merch-card__body">
+            <h3 class="merch-card__title">{{ product.name }}</h3>
+            <p class="merch-card__desc">{{ product.desc }}</p>
+            @if (product.variants?.length) {
+              <div class="merch-card__variants">
+                @for (v of product.variants; track v) {
+                  <span class="pill">{{ v }}</span>
+                }
+              </div>
+            }
+          </div>
+        </div>
+      }
+    </div>
+
+    <div class="merch-cursos">
+      <div class="merch-cursos__head">
+        <h2 class="merch-cursos__title">¿Cómo funciona el encargo?</h2>
+        <p class="merch-cursos__desc">Tres pasos y listo.</p>
+      </div>
+      <div class="merch-cursos__list">
+        @for (step of steps; track step.n) {
+          <div class="merch-step">
+            <span class="merch-step__num mono">{{ step.n }}</span>
+            <div>
+              <div class="merch-step__title">{{ step.title }}</div>
+              <div class="merch-step__desc">{{ step.desc }}</div>
+            </div>
+          </div>
+        }
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="merch-cta">
+  <div class="wrap merch-cta__inner">
+    <div>
+      <div class="kicker kicker--light">¿Hablamos?</div>
+      <h2 class="merch-cta__title">Encarga el <em>tuyo</em>.</h2>
+      <p class="merch-cta__lede">Escríbenos y coordinamos color, talla, pago y entrega.</p>
+    </div>
+    <div class="merch-cta__actions">
+      <a [href]="contactHref" target="_blank" rel="noopener" class="btn btn-accent">Encargar por WhatsApp</a>
+      <a [href]="contactEmail" class="btn btn-ghost-light">Escribir por email</a>
+    </div>
+  </div>
+</section>
+
+<app-footer></app-footer>

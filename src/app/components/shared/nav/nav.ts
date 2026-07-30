@@ -6,7 +6,7 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [CommonModule],
   templateUrl: './nav.html',
-  styleUrls: ['./nav.css']
+  styleUrls: ['./nav.css'],
 })
 export class NavComponent {
   @Input() active = 'home';
@@ -21,6 +21,7 @@ export class NavComponent {
     { id: 'ave', label: '¿Has encontrado un ave?', href: '/que-hacer' },
     { id: 'proyectos', label: 'Proyectos', href: '/#proyectos' },
     { id: 'colabora', label: 'Colabora', href: '/#colabora' },
+    { id: 'merch', label: 'Merch', href: '/merch' },
     { id: 'sobre', label: 'Sobre nosotros', href: '/#sobre' },
   ];
 
