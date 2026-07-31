@@ -1,0 +1,59 @@
+<app-nav [active]="''" [onDark]="false"></app-nav>
+
+<section class="section legal">
+  <div class="wrap-narrow">
+    <div class="kicker">Información legal</div>
+    <h1 class="display legal__title">Política de Cookies</h1>
+    <p class="legal__updated">Última actualización: [FECHA]</p>
+
+    <div class="legal__body">
+      <h2>1. ¿Qué son las cookies?</h2>
+      <p>
+        Las cookies son pequeños archivos que se almacenan en tu navegador al visitar
+        un sitio web. Nos permiten, entre otras cosas, recordar tus preferencias y
+        obtener información estadística sobre el uso del sitio.
+      </p>
+
+      <h2>2. ¿Qué cookies utilizamos?</h2>
+      <div class="legal__table-wrap">
+        <table class="legal__table">
+          <thead>
+            <tr>
+              <th>Cookie</th>
+              <th>Proveedor</th>
+              <th>Finalidad</th>
+              <th>Duración</th>
+              <th>Tipo</th>
+            </tr>
+          </thead>
+          <tbody>
+            @for (c of cookies; track c.nombre) {
+              <tr>
+                <td>{{ c.nombre }}</td>
+                <td>{{ c.proveedor }}</td>
+                <td>{{ c.finalidad }}</td>
+                <td>{{ c.duracion }}</td>
+                <td>{{ c.tipo }}</td>
+              </tr>
+            }
+          </tbody>
+        </table>
+      </div>
+      <!-- <p class="legal__note">
+        [PENDIENTE: confirmar el listado exacto una vez estén implementados Google
+        Analytics / Meta Pixel definitivamente — el ID de medición y el pixel ID deben
+        añadirse aquí y en el script correspondiente.]
+      </p> -->
+
+      <h2>3. ¿Cómo puedes gestionar las cookies?</h2>
+      <p>
+        Puedes aceptar, rechazar o personalizar el uso de cookies no esenciales en
+        cualquier momento desde el banner que aparece al entrar en la web, o cambiando
+        tu elección más adelante desde el enlace "Configurar cookies" en el pie de página.
+        También puedes eliminarlas o bloquearlas desde la configuración de tu navegador.
+      </p>
+    </div>
+  </div>
+</section>
+
+<app-footer></app-footer>

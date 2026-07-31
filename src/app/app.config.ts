@@ -36,6 +36,10 @@ export const appConfig: ApplicationConfig = {
         loadComponent: () => import('./pages/privacy-page/privacy-page').then((m) => m.PrivacyPage),
       },
       {
+        path: 'cookies',
+        loadComponent: () => import('./pages/cookies-page/cookies-page').then((m) => m.CookiesPage),
+      },
+      {
         path: '**',
         loadComponent: () =>
           import('./pages/not-found-page/not-found-page').then((m) => m.NotFoundPage),
