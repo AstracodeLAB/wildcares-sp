@@ -1,18 +1,19 @@
 import { Component, OnInit } from '@angular/core';
 import { RouterOutlet, Router, NavigationEnd } from '@angular/router';
+import { CookieBannerComponent } from './components/shared/cookie-banner/cookie-banner';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet],
+  imports: [RouterOutlet, CookieBannerComponent],
   templateUrl: './app.html',
-  styleUrls: ['./app.css']
+  styleUrls: ['./app.css'],
 })
 export class AppComponent implements OnInit {
   constructor(private router: Router) {}
 
   ngOnInit() {
-    this.router.events.subscribe(event => {
+    this.router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
         const url = event.urlAfterRedirects;
         const hash = url.includes('#') ? url.split('#')[1] : null;

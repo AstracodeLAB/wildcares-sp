@@ -1,0 +1,37 @@
+@if (visible) {
+  <div class="cookie-banner">
+    <div class="cookie-banner__inner">
+      @if (!showCustomize) {
+        <p class="cookie-banner__text">
+          Usamos cookies propias y de terceros para analizar el uso del sitio y mejorar
+          tu experiencia. Puedes aceptar todas, rechazarlas o personalizar tu elección.
+          Más información en nuestra
+          <a routerLink="/cookies" class="cookie-banner__link">Política de Cookies</a>.
+        </p>
+        <div class="cookie-banner__actions">
+          <button type="button" class="btn btn-ghost" (click)="openCustomize()">Personalizar</button>
+          <button type="button" class="btn btn-ghost" (click)="rejectAll()">Rechazar</button>
+          <button type="button" class="btn btn-primary" (click)="acceptAll()">Aceptar todas</button>
+        </div>
+      } @else {
+        <div class="cookie-banner__custom">
+          <label class="cookie-banner__option">
+            <input type="checkbox" checked disabled />
+            Necesarias (siempre activas)
+          </label>
+          <label class="cookie-banner__option">
+            <input type="checkbox" [(ngModel)]="analyticsEnabled" />
+            Analítica (Google Analytics)
+          </label>
+          <label class="cookie-banner__option">
+            <input type="checkbox" [(ngModel)]="marketingEnabled" />
+            Marketing (Meta Pixel)
+          </label>
+          <div class="cookie-banner__actions">
+            <button type="button" class="btn btn-primary" (click)="saveCustom()">Guardar preferencias</button>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+}
