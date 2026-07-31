@@ -28,6 +28,10 @@ export const appConfig: ApplicationConfig = {
         loadComponent: () => import('./pages/merch-page/merch-page').then((m) => m.MerchPage),
       },
       {
+        path: 'aviso-legal',
+        loadComponent: () => import('./pages/legal-page/legal-page').then((m) => m.LegalPage),
+      },
+      {
         path: '**',
         loadComponent: () =>
           import('./pages/not-found-page/not-found-page').then((m) => m.NotFoundPage),
