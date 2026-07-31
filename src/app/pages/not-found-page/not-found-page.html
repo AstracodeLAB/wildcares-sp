@@ -1,0 +1,24 @@
+<app-nav [active]="''" [onDark]="true"></app-nav>
+
+<section class="nf-hero">
+  <div class="nf-hero__inner">
+    <div class="kicker kicker--light">Error 404</div>
+    <div class="nf-hero__code display">404</div>
+    <h1 class="nf-hero__title">Esta página <em>voló</em><br />lejos de aquí.</h1>
+    <p class="nf-hero__lede">
+      Puede que el enlace esté roto o que la página ya no exista.
+      Pero tranquilo, hay muchas más aves que rescatar por aquí.
+    </p>
+    <div class="nf-hero__ctas">
+      <a routerLink="/" class="btn btn-accent">
+        Volver al inicio
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M5 12h14M13 5l7 7-7 7"/>
+        </svg>
+      </a>
+      <a routerLink="/actividades" class="btn btn-ghost-light">Ver actividades</a>
+    </div>
+  </div>
+</section>
+
+<app-footer></app-footer>

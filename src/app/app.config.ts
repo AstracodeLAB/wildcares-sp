@@ -27,6 +27,11 @@ export const appConfig: ApplicationConfig = {
         path: 'merch',
         loadComponent: () => import('./pages/merch-page/merch-page').then((m) => m.MerchPage),
       },
+      {
+        path: '**',
+        loadComponent: () =>
+          import('./pages/not-found-page/not-found-page').then((m) => m.NotFoundPage),
+      },
     ]),
   ],
 };
