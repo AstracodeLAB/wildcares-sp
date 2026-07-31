@@ -32,6 +32,10 @@ export const appConfig: ApplicationConfig = {
         loadComponent: () => import('./pages/legal-page/legal-page').then((m) => m.LegalPage),
       },
       {
+        path: 'privacidad',
+        loadComponent: () => import('./pages/privacy-page/privacy-page').then((m) => m.PrivacyPage),
+      },
+      {
         path: '**',
         loadComponent: () =>
           import('./pages/not-found-page/not-found-page').then((m) => m.NotFoundPage),
